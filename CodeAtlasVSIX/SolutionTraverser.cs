@@ -356,8 +356,8 @@ namespace CodeAtlasVSIX
                 if (vcProject != null)
                 {
                     var vccon = vcProject.ActiveConfiguration as VCConfiguration;
-                    IVCRulePropertyStorage generalRule = vccon.Rules.Item("ConfigurationDirectories");
-                    IVCRulePropertyStorage cppRule = vccon.Rules.Item("CL");
+                    IVCRulePropertyStorage generalRule = (IVCRulePropertyStorage)vccon.Rules.Item("ConfigurationDirectories");
+                    IVCRulePropertyStorage cppRule = (IVCRulePropertyStorage)vccon.Rules.Item("CL");
 
                     // Parsing include path
                     string addIncPath = cppRule.GetEvaluatedPropertyValue("AdditionalIncludeDirectories");
